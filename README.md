@@ -1,6 +1,8 @@
 Ghost Buster
 =================
 
+[![NPM](https://nodei.co/npm/ghost-buster.png)](https://nodei.co/npm/ghost-buster/)
+
 The goal for Ghost Buster is to be a CLI tool to convert a Ghost app into an app that can easily be run on any [Node.js PAAS providers](https://github.com/joyent/node/wiki/Node-Hosting). Right now, it only works with [Modulus](http://modulus.io). 
 
 ## Installing
