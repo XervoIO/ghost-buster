@@ -1,0 +1,34 @@
+{
+  "name": "ghost-buster",
+  "description": "Converts a Ghost app into an app that can run on any Pass",
+  "keywords": [
+    "ghost"
+  ],
+  "version": "0.0.1",
+  "author": "Modulus <support@modulus.io>",
+  "maintainers": [
+    "Taron Foxworth <taron@modulus.io>"
+  ],
+  "contributors": [
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OnModulus/ghost-buster"
+  },
+  "dependencies": {
+    "commander" : "1.1.x",
+    "async" : "0.2.x",
+    "fs-tools": "0.2.x"
+  },
+  "devDependencies" : {
+    "mocha" : "1.8.x"
+  },
+  "main": "./lib/ghost-buster",
+  "bin" : {
+    "ghost-buster": "./bin/ghost-buster"
+  },
+  "preferGlobal" : true,
+  "engines": {
+    "node": ">= 0.8.0"
+  }
+}
