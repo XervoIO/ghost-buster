@@ -1,6 +1,6 @@
 {
   "name": "ghost-buster",
-  "description": "Converts a Ghost app into an app that can run on any Pass",
+  "description": "Converts a Ghost app into an app that can run on any Paas",
   "keywords": [
     "ghost"
   ],
