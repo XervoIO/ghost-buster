@@ -3,7 +3,7 @@ var program = require('commander'),
     path = require('path');
 
 program
-  .version('0.0.1')
+  .version('0.0.3')
   .parse(process.argv);
 
 
