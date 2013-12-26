@@ -4,7 +4,7 @@ var program = require('commander'),
     fs = require('fs');
 
 program
-  .version('0.0.5')
+  .version('0.0.7')
   .option('-l, --local [path]', 'Pushing Local blog at [path]instead of syncing with cloud storage')
   .parse(process.argv);
 
