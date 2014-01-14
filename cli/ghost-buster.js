@@ -5,7 +5,7 @@ var program = require('commander'),
 
 program
   .version('0.0.7')
-  .option('-l, --local [path]', 'Pushing Local blog at [path]instead of syncing with cloud storage')
+  .option('-l, --local [pathtodb]', 'Pushing Local blog at [path]instead of syncing with cloud storage')
   .parse(process.argv);
 
 
