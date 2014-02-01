@@ -18,7 +18,9 @@
   "dependencies": {
     "commander" : "1.1.x",
     "async" : "0.2.x",
-    "fs-tools": "0.2.x"
+    "fs-tools": "0.2.x",
+    "glob": "latest",
+    "fs-extra": "latest"
   },
   "devDependencies" : {
     "mocha" : "1.8.x"
