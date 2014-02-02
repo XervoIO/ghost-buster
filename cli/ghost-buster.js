@@ -36,7 +36,7 @@ if (!program.upgrade) {
   }
 
 
-  ghostBuster.convert(program.local, program.ghostversion, function(err) {
+  ghostBuster.convert(program.ghostversion, program.db, function(err) {
 
     if (err) {
 
