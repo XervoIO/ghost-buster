@@ -1,14 +1,12 @@
 var program = require('commander'),
   ghostBuster = require('../lib/ghost-buster'),
   path = require('path'),
-  fs = require('fs'),
   cwd = process.cwd();
 
 program
   .version('0.0.7')
   .option('-db, --database [pathtodb]', 'Pushing Local blog at [path]instead of syncing with cloud storage')
-  .option('-g, --ghostversion [ghostversion]', 'Version of Ghost (Otherwise useing version from package.json)')
-  .option('-u, --upgrade', "Upgrade Ghost (Doesn't automatically run ghost-buster)")
+  .option('-u, --upgrade [ghostversion]', 'Upgrade Ghost (Doesn\'t automatically run ghost-buster)')
   .parse(process.argv);
 
 
@@ -19,24 +17,11 @@ ghostBuster.on('progress', function(msg) {
 });
 
 
-if (!program.upgrade) {
+if (!program.upgrade && !program.downgrade) {
 
-  if (program.db) {
+  if (!program.db) program.db = path.join('content', 'data', 'ghost.db');
 
-    program.db = path.join(cwd, "content", "data", "ghost.db");
-
-  }
-
-  if (!program.ghostversion) {
-
-    var meta = require(path.join(cwd, 'package.json'));
-
-    program.ghostversion = meta.version;
-
-  }
-
-
-  ghostBuster.convert(program.ghostversion, program.db, function(err) {
+  ghostBuster.convert(program.db, function(err) {
 
     if (err) {
 
@@ -52,9 +37,13 @@ if (!program.upgrade) {
 
 } else {
 
-  console.log('Upgrading...');
+  console.log('Upgrading/Downgrading...');
 
-  ghostBuster.upgrade(function(err) {
+  console.log((program.upgrade || program.downgrade));
+
+  var version = (program.upgrade || program.downgrade);
+
+  ghostBuster.upgrade(version, function(err) {
 
     if (err) {
 
@@ -67,6 +56,5 @@ if (!program.upgrade) {
     }
 
   });
-
 
 }
