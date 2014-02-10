@@ -20,7 +20,7 @@ localFileStore = _.extend(baseStore, {
     // - returns a promise which ultimately returns the full url to the uploaded image
     'save': function (image) {
         var saved = when.defer(),
-            targetDir = this.getTargetDir(process.env.CLOUD_DIR),
+            targetDir = this.getTargetDir(configPaths().imagesRelPath),
             targetFilename;
 
         this.getUniqueFileName(this, image, targetDir).then(function (filename) {
@@ -60,7 +60,7 @@ localFileStore = _.extend(baseStore, {
             ONE_YEAR_MS = 365 * 24 * ONE_HOUR_MS;
 
         // For some reason send divides the max age number by 1000
-        return express['static'](process.env.CLOUD_DIR, {maxAge: ONE_YEAR_MS});
+        return express['static'](configPaths().imagesPath, {maxAge: ONE_YEAR_MS});
     }
 });
 

@@ -3,7 +3,15 @@ Ghost Buster
 
 [![NPM](https://nodei.co/npm/ghost-buster.png)](https://nodei.co/npm/ghost-buster/)
 
-The goal for Ghost Buster is to be a CLI tool to convert a Ghost app into an app that can easily be run on any [Node.js PAAS providers](https://github.com/joyent/node/wiki/Node-Hosting). Right now, it only works with [Modulus.io](http://modulus.io). 
+# ** Important **
+
+Version 1.0.0 removed support for deploying to Modulus' cloud storage. The current
+and only way to deploy is to create/edit your blog locally then deploy to Modulus.
+
+If you are using Ghost 0.3.3 with cloud storage on Modulus, use ghost-buster version 0.0.7.
+Also, please continue to use 0.3.3. 
+
+Ghost Buster is a CLI tool for Ghost apps.
 
 ## Installing
     $ npm install -g ghost-buster
@@ -12,26 +20,28 @@ The goal for Ghost Buster is to be a CLI tool to convert a Ghost app into an app
     $ cd /path/to/ghost
     $ ghost-buster [options]
 
-    --version                print ghost-buster version and exit
-    -l, --local [path]       Pushing Local blog at [path]instead of syncing with cloud storage
+         --version                      print ghost-buster version and exit
+    -db  --database [pathtodb]          Pushing Local blog at [path]instead of syncing with cloud storage)
+    -u   --upgrade [ghostversion]       Upgrade Ghost (Doesn\'t automatically run ghost-buster))
 
 
 ## Examples
-1. Convert the Ghost app in the current directory 
 
+###To convert your ghost project to run on Modulus:
+  
+    $ cd /your/ghost/app
     $ ghost-buster
-
-This will save your blog on the [Modulus](http://modulus.io) cloud storage. One
-MUST update their blog live. Updating your blog locally will do nothing.
-
-2. Convert the Ghost app in the current directory 
-
-    $ ghost-buster -l content/data/ghost.db
+    $ modulus deploy
 
 This will deploy the blog specified by [path]. One MUST update their blog locally.
 Updating live will not do anything because the blog will be overwritten by local 
 copy on deployment. 
 
+###Version management:
+
+    $ ghost-buster -u version
+
+This will upgrade your version of Ghost to the version specified
 
 ## Support
 Ghost Buster has been tested with the a hand full of Ghost apps. If you find an app that doesn't
