@@ -4,7 +4,7 @@ var program = require('commander'),
   cwd = process.cwd();
 
 program
-  .version('0.0.7')
+  .version('1.0.0')
   .option('-db, --database [pathtodb]', 'Pushing Local blog at [path]instead of syncing with cloud storage')
   .option('-u, --upgrade [ghostversion]', 'Upgrade Ghost (Doesn\'t automatically run ghost-buster)')
   .parse(process.argv);
