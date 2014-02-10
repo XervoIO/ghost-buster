@@ -30,7 +30,7 @@ Ghost Buster is a CLI tool for Ghost apps.
 
 ###To convert your ghost project to run on Modulus:
 
-$ ghost-buster -l content/data/ghost.db
+  $ ghost-buster -l content/data/ghost.db
 
 This will deploy the blog specified by [path]. One MUST update their blog locally.
 Updating live will not do anything because the blog will be overwritten by local 
@@ -38,11 +38,11 @@ copy on deployment.
 
 ###Version management:
 
-$ ghost-buster -u version
+  $ ghost-buster -u version
 
 This will upgrade your version of Ghost to the version specified 
 
-$ ghost-buster -d version
+  $ ghost-buster -d version
 
 This will downgrade your version of Ghost to the version specified
 
