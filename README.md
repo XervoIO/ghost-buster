@@ -2,6 +2,7 @@ Ghost Buster
 =================
 
 [![NPM](https://nodei.co/npm/ghost-buster.png)](https://nodei.co/npm/ghost-buster/)
+[![Build Status](https://api.travis-ci.org/onmodulus/ghost-buster.png?branch=master)](https://travis-ci.org/onmodulus/ghost-buster)
 
 # ** Important **
 
