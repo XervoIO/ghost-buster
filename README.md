@@ -23,14 +23,15 @@ Ghost Buster is a CLI tool for Ghost apps.
          --version                      print ghost-buster version and exit
     -db  --database [pathtodb]          Pushing Local blog at [path]instead of syncing with cloud storage)
     -u   --upgrade [ghostversion]       Upgrade Ghost (Doesn\'t automatically run ghost-buster))
-    -d   --downgrade [ghostversion]     Downgrade Ghost (Doesn\'t automatically run ghost-buster))
 
 
 ## Examples
 
 ###To convert your ghost project to run on Modulus:
-
-    $ ghost-buster -l content/data/ghost.db
+  
+    $ cd /your/ghost/app
+    $ ghost-buster
+    $ modulus deploy
 
 This will deploy the blog specified by [path]. One MUST update their blog locally.
 Updating live will not do anything because the blog will be overwritten by local 
@@ -40,11 +41,7 @@ copy on deployment.
 
     $ ghost-buster -u version
 
-This will upgrade your version of Ghost to the version specified 
-
-    $ ghost-buster -d version
-
-This will downgrade your version of Ghost to the version specified
+This will upgrade your version of Ghost to the version specified
 
 ## Support
 Ghost Buster has been tested with the a hand full of Ghost apps. If you find an app that doesn't
